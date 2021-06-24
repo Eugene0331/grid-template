@@ -59,6 +59,33 @@ a {
   color: $color-light;
 }
 
+h2 {
+  letter-spacing: 0.1em;
+
+  color: $color-primary;
+
+  font-family: $font-header;
+  line-height: 1.2em;
+
+  @include lg-min {
+    margin-bottom: $gap * 2.8;
+    font-size: 2.5rem;
+  }
+  @include lg-md {
+    margin-bottom: $gap * 2.1;
+    font-size: 2rem;
+  }
+  @include md-sm {
+    margin-bottom: $gap * 1.8;
+    font-size: 1.5rem;
+  }
+  @include sm {
+    margin-bottom: $gap * 1.8;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+
 .btn {
   display: flex;
   align-items: center;

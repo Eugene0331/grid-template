@@ -1,5 +1,5 @@
 .about {
-  letter-spacing: 0.1em;
+  // letter-spacing: 0.1em;
 
   background-color: $color-gray-light;
 
@@ -54,7 +54,7 @@
             right: -$gap;
           }
           @include md-sm {
-            right: -gap / 2;
+            right: -$gap / 2;
           }
           @include sm {
             display: none;
