@@ -6,7 +6,7 @@
 html {
   overflow-y: scroll;
 
-  letter-spacing: 0.1em;
+  // letter-spacing: 0.1em;
 
   color: $color-gray;
 
@@ -84,6 +84,24 @@ h2 {
     text-align: center;
     font-size: 1.5rem;
   }
+}
+
+h3 {
+  letter-spacing: 0.05em;
+  color:$color-gray;
+  font-size: 1.125rem;
+}
+a {
+  text-decoration: none;
+  color: $color-light;
+}
+
+p {
+  color: $color-gray;
+}
+
+input {
+  outline: none;
 }
 
 .btn {
