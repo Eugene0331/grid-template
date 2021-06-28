@@ -35,11 +35,13 @@
 
       &:first-of-type {
         position: relative;
+
         margin-top: -5px;
 
         &::after {
           position: absolute;
           top: 0;
+
           width: 2px;
           height: 200px;
 

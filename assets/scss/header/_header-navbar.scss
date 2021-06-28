@@ -1,85 +1,157 @@
 .header-navbar {
-  // &__btn {
-  //   display: none;
-  // }
+  letter-spacing: 0.1em;
+
+  &__btn {
+    position: relative;
+
+    width: 30px;
+    height: 22.5px;
+    margin: 25px 0 25px auto;
+
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    transform: rotate(0deg);
+
+    @include md-min {
+      display: none;
+    }
+
+    &-row {
+      position: absolute;
+
+      display: block;
+
+      width: 50%;
+      height: 3px;
+
+      transition: 0.25s ease-in-out;
+      transform: rotate(0deg);
+
+      opacity: 1;
+      background: $color-light;
+
+      &:nth-child(even) {
+        left: 50%;
+
+        border-radius: 0 3px 3px 0;
+      }
+
+      &:nth-child(odd) {
+        left: 0;
+
+        border-radius: 3px 0 0 3px;
+      }
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        top: 0;
+      }
+
+      &:nth-child(3),
+      &:nth-child(4) {
+        top: 9px;
+      }
+
+      &:nth-child(5),
+      &:nth-child(6) {
+        top: 18px;
+      }
+    }
+
+    &--active span {
+      &:nth-child(1),
+      &:nth-child(6) {
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(2),
+      &:nth-child(5) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(1) {
+        top: 3.5px;
+        left: 2.5px;
+      }
+
+      &:nth-child(2) {
+        top: 3.5px;
+        left: calc(50% - 2.5px);
+      }
+
+      &:nth-child(3) {
+        left: -50%;
+
+        opacity: 0;
+      }
+
+      &:nth-child(4) {
+        left: 100%;
+
+        opacity: 0;
+      }
+
+      &:nth-child(5) {
+        top: 14.5px;
+        left: 2.5px;
+      }
+
+      &:nth-child(6) {
+        top: 14.5px;
+        left: calc(50% - 2.5px);
+      }
+    }
+  }
 
   &__list {
-    @include unlist(0 (-$gap / 2) 0 0);
-
     @include md-min {
       display: grid;
       justify-content: end;
 
       gap: $gap;
       grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+      @include unlist(0 (-$gap / 2) 0 0);
+    }
+    @include md {
+      position: absolute;
+      top: 100%;
+      right: $gap;
+
+      display: none;
+
+      text-align: right;
+      letter-spacing: 0.1em;
+
+      border-radius: 20px;
+      background-color: rgba($color-gray-dark, 0.95);
+
+      @include unlist(0, 10px 0);
+      @include box-shadow;
     }
 
-    @include md {
-      display: none;
+    &--active {
+      display: block !important;
     }
   }
 
   &__link {
     display: block;
 
-    padding: $gap ($gap / 2);
+    @include md-min {
+      padding: $gap ($gap / 2);
+    }
+
+    @include md {
+      padding: $gap ($gap * 2);
+    }
 
     transition: color 0.5s;
 
     font-size: 1.125rem;
-  }
 
-  &__link:hover {
-    color: $color-accent;
-  }
-}
-
-
-
-
-.menu {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  transition: 0.5s ease;
-  height: 13px;
-  &:hover .bar {
-    box-shadow: 1px 1px 7px 1px RGBa(0, 0, 0, 0.3);
-  }
-  .bar {
-    width: 30px;
-    height: 2px;
-    background: $color-light;
-    box-shadow: 1px 1px 3px RGBa(0, 0, 0, 0.4);
-    border-radius: 2px;
-    transition: 0.4s ease;
-    &:not(:first-child) {
-      margin-top: 6px;
+    &:hover,
+    &:focus {
+      color: $color-accent;
     }
   }
 }
-#hi {
-  position: absolute;
-  left: -999px;
-  top: -999px;
-}
-#hi:checked + .menu {
-  transform: translate(-50%,-50%) rotatey(180deg);
-  .bar {
-    transform: rotatey(180deg) rotatex(360deg);
-    &:first-child {
-      transform: rotate(-45deg);
-      margin-top: 6px;
-    }
-    &:nth-child(2) {
-      opacity: 0;
-    }
-    &:nth-child(3) {
-      margin-top: -10px;
-      transform: rotate(45deg);
-    }
-  }
-}
-

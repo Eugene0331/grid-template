@@ -18,18 +18,17 @@
   }
 
   &__image {
-    @include abs-position;
-
     transition: transform 10s;
 
     background-color: $color-primary;
     background-image: url(../img/no-image.png);
     background-position: center;
     background-size: cover;
+
+    @include abs-position;
   }
 
   &__title {
-    @include abs-position;
     z-index: 1;
 
     height: 100%;
@@ -37,10 +36,10 @@
 
     letter-spacing: 0.1em;
 
+    @include abs-position;
     @include md-min {
       font-size: 1.25rem;
     }
-
     @include md {
       font-size: 1.125rem;
     }
@@ -58,12 +57,12 @@
   }
 
   &__overlay {
-    @include abs-position;
-
     transition: opacity 0.25s;
 
     opacity: 0.8;
     background-color: $color-primary;
+
+    @include abs-position;
   }
 }
 
@@ -72,5 +71,3 @@
     grid-area: a#{$i};
   }
 }
-
-

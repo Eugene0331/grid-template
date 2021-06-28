@@ -1,14 +1,14 @@
 %container {
   max-width: $ul;
   margin: auto;
-  padding-left: $gap;
   padding-right: $gap;
+  padding-left: $gap;
 }
 
 %section {
   @include lg-min {
-    padding-top: $gap * 5;
     padding: $gap * 5;
+    padding-top: $gap * 5;
   }
   @include lg-md {
     padding-top: $gap * 4;

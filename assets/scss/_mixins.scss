@@ -1,7 +1,12 @@
 @mixin unlist($m: 0, $p:0) {
-list-style: none;
-margin: $m;
-padding: $p;
+  margin: $m;
+  padding: $p;
+
+  list-style: none;
+}
+
+@mixin box-shadow {
+  box-shadow: -3px 3px 20px -10px darken($color-gray-dark, 40%) ;
 }
 
 @mixin abs-position($t: 0, $r: 0, $b: 0, $l: 0) {
