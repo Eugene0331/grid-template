@@ -1,9 +1,8 @@
 .skills {
-  margin-bottom: $gap * 1.5;
-  padding: $gap / 2;
-
-  @media (max-width: 576px) {
-    margin-bottom: 0;
+  @include sm-min {
+    padding: ($gap / 2) ($gap / 2) ($gap * 2);
+  }
+  @include sm {
     padding: $gap;
   }
 
@@ -44,7 +43,6 @@
   }
 
   &__actions {
-    display: flex;
-    justify-content: center;
+    @extend %btn-container;
   }
 }

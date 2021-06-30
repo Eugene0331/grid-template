@@ -122,7 +122,6 @@
       text-align: right;
       letter-spacing: 0.1em;
 
-      border-radius: 20px;
       background-color: rgba($color-gray-dark, 0.95);
 
       @include unlist(0, 10px 0);
@@ -137,17 +136,16 @@
   &__link {
     display: block;
 
-    @include md-min {
-      padding: $gap ($gap / 2);
-    }
-
-    @include md {
-      padding: $gap ($gap * 2);
-    }
-
     transition: color 0.5s;
 
     font-size: 1.125rem;
+
+    @include md-min {
+      padding: $gap ($gap / 2);
+    }
+    @include md {
+      padding: $gap ($gap * 2);
+    }
 
     &:hover,
     &:focus {
